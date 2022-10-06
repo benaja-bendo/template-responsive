@@ -1,0 +1,23 @@
+{
+  "name": "template-responsive",
+  "version": "1.0.0",
+  "description": "Nom du groupe : **BordeauxWeb** Membres du groupe :  - Benaja - Darren - Kawtar",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benaja-bendo/template-responsive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benaja-bendo/template-responsive/issues"
+  },
+  "homepage": "https://github.com/benaja-bendo/template-responsive#readme",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
