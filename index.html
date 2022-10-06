@@ -56,66 +56,41 @@
       // Bootstrap ID
       gtag('config', 'UA-118965717-5');
     </script>
+    <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+            if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+            }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+        }
+        }
+      }
+    </script>
     <link href="dist/vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
   </head>
   <body>
     <!-- include slider -->
-    <!-- <div w3-include-html="./partials/slider.html"></div> -->
-    <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
-        <div class="sidebar-brand d-none d-md-flex">
-          <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-            <use xlink:href="/dist/assets/brand/coreui.svg#full"></use>
-          </svg>
-          <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-            <use xlink:href="/dist/assets/brand/coreui.svg#signet"></use>
-          </svg>
-        </div>
-        <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-          
-          <li class="nav-item"><a class="nav-link" href="/actualite.html">
-              <svg class="nav-icon">
-                <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-newspaper"></use>
-              </svg> Actualités</a>
-            </li>
-          <li class="nav-item"><a class="nav-link" href="/actualite.html">
-              <svg class="nav-icon">
-                <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-              </svg> Base clients</a>
-            </li>
-          <li class="nav-item"><a class="nav-link" href="/actualite.html">
-              <svg class="nav-icon">
-                <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-featured-playlist"></use>
-              </svg> Base annonces</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="/actualite.html">
-                <svg class="nav-icon">
-                  <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-phone"></use>
-                </svg> Chat et appels</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="/actualite.html">
-                <svg class="nav-icon">
-                  <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-calendar"></use>
-                </svg> Calendier</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="/actualite.html">
-                <svg class="nav-icon">
-                  <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-cart"></use>
-                </svg> 
-                Mes ventes</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="/actualite.html">
-                <svg class="nav-icon">
-                  <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-contact"></use>
-                </svg> Centre de contact</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="/actualite.html">
-                <svg class="nav-icon">
-                  <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-graph"></use>
-                </svg>Analityque</a>
-              </li>
-        </ul>
-        <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
-      </div>
+    <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar" w3-include-html="./partials/slider.html"></div>
+    
 
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
         <!-- include header -->
@@ -127,12 +102,7 @@
         <p>le contenu</p>
       </div>
       <!-- include footer -->
-      <!-- <div w3-include-html="./partials/footer.html"></div> -->
-      <footer class="footer">
-        <div><a href="https://coreui.io">CoreUI </a><a href="https://coreui.io">Bootstrap Admin Template</a> © 2022 creativeLabs.</div>
-        <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/docs/">CoreUI UI Components</a></div>
-      </footer>
-
+      <footer class="footer" w3-include-html="./partials/footer.html"></footer>
     </div>
 
     <!-- CoreUI and necessary plugins-->
@@ -143,35 +113,6 @@
     <script src="dist/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
     <script src="dist/vendors/@coreui/utils/js/coreui-utils.js"></script>
     <script src="dist/js/main.js"></script>
-    <script defer>
-        function includeHTML() {
-            var z, i, elmnt, file, xhttp;
-            /* Loop through a collection of all HTML elements: */
-            z = document.getElementsByTagName("*");
-            for (i = 0; i < z.length; i++) {
-            elmnt = z[i];
-            /*search for elements with a certain atrribute:*/
-            file = elmnt.getAttribute("w3-include-html");
-            if (file) {
-                /* Make an HTTP request using the attribute value as the file name: */
-                xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                    if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                    /* Remove the attribute, and call this function once more: */
-                    elmnt.removeAttribute("w3-include-html");
-                    includeHTML();
-                }
-                }
-                xhttp.open("GET", file, true);
-                xhttp.send();
-                /* Exit the function: */
-                return;
-            }
-            }
-        }
-        includeHTML();
-        </script>
+    <script> includeHTML();</script>
   </body>
 </html>
