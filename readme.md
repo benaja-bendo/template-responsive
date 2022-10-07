@@ -1,4 +1,4 @@
-Nom du groupe : **BordeauxWeb**
+Nom du groupe : **BDK**  
 Membres du groupe : 
 - Benaja
 - Darren
