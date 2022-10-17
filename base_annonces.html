@@ -16,7 +16,7 @@
     <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-    <title>AgenceImo</title>
+    <title>ImoAgence</title>
     <link rel="apple-touch-icon" sizes="57x57" href="dist/assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="dist/assets/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="dist/assets/favicon/apple-icon-72x72.png">
@@ -36,7 +36,7 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Vendors styles-->
     <link rel="stylesheet" href="dist/vendors/simplebar/css/simplebar.css">
-    <link rel="stylesheet" href="dist/css/dist/vendors/simplebar.css">
+    <link rel="stylesheet" href="dist/css/vendors/simplebar.css">
     <!-- Main styles for this application-->
     <link href="dist/css/style.css" rel="stylesheet">
     <!-- We use those styles to show code examples, you should remove them in your application.-->
@@ -99,12 +99,188 @@
      
       <div class="body flex-grow-1 px-3">
         <!-- contentue de la page -->
-        <h3 class="text-center pt-2">Base Annonces</h3>
+        
+        
+        <p class="">Effectuer une recherche</p>
+      
+        <div class="row row-cols-lg-auto g-4 align-items-center">
+
+          <div class="row row-cols-lg-auto g-3 align-items-center">
+            <div class="col-12">
+            
+              <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Ville...">
+
+              <datalist id="datalistOptions">
+                <option value="Bègles"></option>
+                <option value="Bordeaux"></option>
+                <option value="Cenon"></option>
+                <option value="Talance"></option>
+                <option value="Pessac"></option>  
+              </datalist>
+            </div>
+            <div class="col-12">
+              <select id="inputState" class="form-select">
+                <option selected>Type</option>
+                <option>Appartement</option>
+                <option>Maison</option>
+                
+              </select>
+            </div>
+            <div class="flex">
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value=""> Studio
+                </label>
+              </div>
+            
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value=""> T1
+                </label>
+              </div>
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="" > T2
+                </label>
+              </div> 
+              <div class="form-check-inline">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" value="" > T3
+                </label>
+              </div>
+            </div> 
+          </div>
+          <div class="row row-cols-lg-auto g-3 align-items-cente">
+            <div class="col-md-4">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Prix min">
+                <span class="input-group-text text-light bg-dark">€</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Prix max">
+                <span class="input-group-text text-light bg-dark">€</span>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-warning border-dark " type="button">Rechercher</button>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <h3 class="text-center pt-2">Les annonces</h3>
+        <hr>
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 row-cols-md-2 g-3">
+
+            <div class="col-12">
+              <div class="card mb-4">
+                
+                <img src="dist/assets/img/appt.jpg" class="card-img-top" alt="">
+                
+                <div class="card-body row">
+                  
+                    
+                      <div class="fs-5 fw-semibold">639€</div>
+                    
+                      <div class="fs-6 fw-semibold">Studio</div>
+                    
+                    <div class="text-uppercase text-medium-emphasis small">
+                    <svg class="icon icon-lg me-2 text-dark">
+                      <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-location-pin"></use>
+                    </svg>Bègles (33130)</div>
+                  
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+            <div class="col-12">
+              <div class="card mb-4">
+                <img src="dist/assets/img/appt.jpg" class="card-img-top" alt="">
+                
+                <div class="card-body row">
+                  
+                    <div class="fs-5 fw-semibold">730€</div>
+                    <div class="fs-6 fw-semibold">T1</div>
+                    <div class="text-uppercase text-medium-emphasis small">
+                      
+                      <svg class="icon icon-lg me-2 text-dark">
+                        <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-location-pin"></use>
+                      </svg>Bordeaux (33300)</div>
+                  
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+            <div class="col-12">
+              <div class="card mb-4">
+                <img src="dist/assets/img/appt.jpg" class="card-img-top" alt="">
+                <div class="card-body row">
+                  
+                    <div class="fs-5 fw-semibold">500€</div>
+                    <div class="fs-6 fw-semibold">Studio</div>
+                    <div class="text-uppercase text-medium-emphasis small"><svg class="icon icon-lg me-2 text-dark">
+                      <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-location-pin"></use>
+                    </svg>Cenon (33150)</div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card mb-4">
+                <img src="dist/assets/img/appt.jpg" class="card-img-top" alt="">
+                <div class="card-body row">
+                  
+                    <div class="fs-5 fw-semibold">520€</div>
+                    <div class="fs-6 fw-semibold">Studio</div>
+                    <div class="text-uppercase text-medium-emphasis small"><svg class="icon icon-lg me-2 text-dark">
+                      <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-location-pin"></use>
+                    </svg>Talence (33400)</div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card mb-4">
+                <img src="dist/assets/img/appt.jpg" class="card-img-top" alt="">
+                <div class="card-body row">
+                  
+                    <div class="fs-5 fw-semibold">450€</div>
+                    <div class="fs-6 fw-semibold">Studio</div>
+                    <div class="text-uppercase text-medium-emphasis small"><svg class="icon icon-lg me-2 text-dark">
+                      <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-location-pin"></use>
+                    </svg>Pessac (33318)</div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card mb-4">
+                <img src="dist/assets/img/appt.jpg" class="card-img-top" alt="">
+                <div class="card-body row">
+                  
+                    <div class="fs-5 fw-semibold">450€</div>
+                    <div class="fs-6 fw-semibold">Studio</di>
+                    <div class="text-uppercase text-medium-emphasis small"><svg class="icon icon-lg me-2 text-dark">
+                      <use xlink:href="/dist/vendors/@coreui/icons/svg/free.svg#cil-location-pin"></use>
+                    </svg>Bordeaux (33300)</div>
+                  
+                </div>
+              </div>
+            </div>
+            <!-- /.col-->
+          
+      
+        </div>
+        
       </div>
+      </div>
+    </div>
       <!-- include footer -->
       <footer class="footer bg-warning" w3-include-html="./partials/footer.html"></footer>
-    </div>
-
+    
+    
     <!-- CoreUI and necessary plugins-->
     <script src="dist/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
     <script src="dist/vendors/simplebar/js/simplebar.min.js"></script>

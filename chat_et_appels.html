@@ -36,12 +36,13 @@
     <meta name="theme-color" content="#ffffff">
     <!-- Vendors styles-->
     <link rel="stylesheet" href="dist/vendors/simplebar/css/simplebar.css">
-    <link rel="stylesheet" href="dist/css/dist/vendors/simplebar.css">
+    <link rel="stylesheet" href="dist/css/vendors/simplebar.css">
     <!-- Main styles for this application-->
     <link href="dist/css/style.css" rel="stylesheet">
     <!-- We use those styles to show code examples, you should remove them in your application.-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
     <link href="dist/css/examples.css" rel="stylesheet">
+    <link href="dist/css/chat_box.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-118965717-3"></script>
     <script>
@@ -94,7 +95,7 @@
 
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
         <!-- include header -->
-      <header class="header header-sticky mb-4" w3-include-html="./partials/header.html"></header>
+      <header class="header header-sticky mb-4 bg-warning" w3-include-html="./partials/header.html"></header>
        
      
       <div class="body flex-grow-1 px-3">
@@ -165,7 +166,7 @@
         
       </div>
       <!-- include footer -->
-      <footer class="footer" w3-include-html="./partials/footer.html"></footer>
+      <footer class="footer bg-warning" w3-include-html="./partials/footer.html"></footer>
     </div>
 
     <!-- CoreUI and necessary plugins-->
